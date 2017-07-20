@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Development on TJ Blog</title>
+    <link>https://kristd.github.io/tags/development/</link>
+    <description>Recent content in Development on TJ Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 Jul 2017 14:34:53 +0800</lastBuildDate>
+    
+	<atom:link href="https://kristd.github.io/tags/development/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Golang正则表达式简单用法</title>
+      <link>https://kristd.github.io/20170718-01/</link>
+      <pubDate>Tue, 18 Jul 2017 14:34:53 +0800</pubDate>
+      
+      <guid>https://kristd.github.io/20170718-01/</guid>
+      <description>Golang</description>
+    </item>
+    
+    <item>
+      <title>Golang中websocket/socket的用法归纳</title>
+      <link>https://kristd.github.io/20170630-01/</link>
+      <pubDate>Fri, 30 Jun 2017 15:17:57 +0800</pubDate>
+      
+      <guid>https://kristd.github.io/20170630-01/</guid>
+      <description> Golang
+websocket  socket  </description>
+    </item>
+    
+    <item>
+      <title>Golang使用断言的类型转换方法</title>
+      <link>https://kristd.github.io/20170628-01/</link>
+      <pubDate>Wed, 28 Jun 2017 00:44:37 +0800</pubDate>
+      
+      <guid>https://kristd.github.io/20170628-01/</guid>
+      <description> Golang
+问题 在对interface做类型转换时需要使用断言来转换成正确的类型
+代码 type R struct { Config []map[string]interface{} } r := &amp;amp;R{} //转换成字符串 key1, ret := r.Config[0][&amp;quot;key1&amp;quot;].(string) if ret { fmt.Println(&amp;quot;success&amp;quot;) } //转换成数组 array1, ret := r.Config[0][&amp;quot;array1&amp;quot;].([]interface{}) if ret { fmt.Println(&amp;quot;success&amp;quot;) }  </description>
+    </item>
+    
+    <item>
+      <title>Golang动态处理JSON数据结构</title>
+      <link>https://kristd.github.io/20170627-01/</link>
+      <pubDate>Tue, 27 Jun 2017 23:25:37 +0800</pubDate>
+      
+      <guid>https://kristd.github.io/20170627-01/</guid>
+      <description> 问题 解决办法 Golang的反射机制 </description>
+    </item>
+    
+  </channel>
+</rss>

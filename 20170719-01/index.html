@@ -1,0 +1,118 @@
+	<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.24" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  
+  <title>Golang异常捕捉方法recover和panic &middot; TJ Blog</title>
+  
+
+  
+  <link rel="stylesheet" href="https://kristd.github.iocss/poole.css">
+  <link rel="stylesheet" href="https://kristd.github.iocss/syntax.css">
+  <link rel="stylesheet" href="https://kristd.github.iocss/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="" rel="alternate" type="application/rss+xml" title="TJ Blog" />
+</head>
+
+	<body class=" ">
+		<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://kristd.github.io"><h1>TJ Blog</h1></a>
+      <p class="lead">
+      made by <a href="http://twitter.com/mdo">@mdo</a> 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/">Home</a> </li>
+      
+	</ul>
+
+    <p>&copy; 2017. All rights reserved. </p>
+  </div>
+</div>
+
+
+		<div class="content container">
+			<div class="post">
+			 	<h1>Golang异常捕捉方法recover和panic</h1>
+			  <span class="post-date">Wed, Jul 19, 2017</span>
+			      
+
+<p><code>Golang</code></p>
+
+<p>golang使用recover和panic作为异常捕获机制。</p>
+
+<ul>
+<li>panic可以是用户主动调用抛出异常，也可以是一般程序执行中发生的异常，如内存访问错误等。</li>
+<li>recover用于捕获panic抛出的异常，特别的是recover只能放在defer的关键字声明的函数体中使用。类似于C++中的try-catch，panic抛出的异常可以被同一层的recover或者上一层的recover捕获，具体依赖于recover所在的位置。</li>
+</ul>
+
+<h3 id="recover和panic的定义">recover和panic的定义</h3>
+
+<hr />
+
+<pre><code class="language-go">//一般输出error类型
+func recover() interface{}
+</code></pre>
+
+<pre><code class="language-go">//interface接受任何类型的输入
+func panic(v ...interface{})
+</code></pre>
+
+<h3 id="测试代码">测试代码</h3>
+
+<hr />
+
+<pre><code class="language-go">func main() {
+    defer func() {
+        //catch exception
+        if err := recover(); err != nil {
+            fmt.Println(err)
+        }
+        //defer stack
+        fmt.Println(&quot;first defer&quot;)
+    }()
+
+    defer func() {
+        //defer stack
+        fmt.Println(&quot;second defer&quot;)
+    }()
+    f()
+}
+
+func f() {
+    a := []string{&quot;a&quot;, &quot;b&quot;}
+    //throw exception
+    defer func() {
+        if err := recover(); err != nil {
+            fmt.Println(&quot;f err = &quot;, err)
+        }
+    }()
+
+    fmt.Println(a[3])
+    //never reach
+    fmt.Println(&quot;f end&quot;)
+}
+</code></pre>
+
+			</div>
+
+			
+		</div>
+
+  </body>
+</html>
