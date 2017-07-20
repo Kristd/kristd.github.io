@@ -191,7 +191,7 @@ func payloadHandler(w http.ResponseWriter, r *http.Request) {
 
 <p>我们仅仅避免了问题，同时开始了我们的系统挂掉的倒计时。当部署了这个有缺陷的版本后，我们的延时保持在每分钟以常量增长。</p>
 
-<p><img src="https://raw.githubusercontent.com/kristd/snippet/master/image/hugo/20170629-01/1-1.png" alt="1-1" /></p>
+<p><img src="https://raw.githubusercontent.com/kristd/kristd.github.io/master/20170629-01/1-1.png" alt="1-1" /></p>
 
 <h3 id="最好的解决方案">最好的解决方案</h3>
 
@@ -351,17 +351,17 @@ func (d *Dispatcher) dispatch() {
 
 <p>我们部署了之后，立马看到了延时降到微乎其微的数值，并未我们处理请求的能力提升很大。</p>
 
-<p><img src="https://raw.githubusercontent.com/kristd/snippet/master/image/hugo/20170629-01/1-2.png" alt="1-2" /></p>
+<p><img src="https://raw.githubusercontent.com/kristd/kristd.github.io/master/20170629-01/1-2.png" alt="1-2" /></p>
 
 <p>Elastic Load Balancers完全启动后，我们看到ElasticBeanstalk 应用服务于每分钟1百万请求。通常情况下在上午时间有几个小时，流量峰值超过每分钟一百万次。</p>
 
 <p>我们一旦部署了新的代码，服务器的数量从100台大幅 下降到大约20台。</p>
 
-<p><img src="https://raw.githubusercontent.com/kristd/snippet/master/image/hugo/20170629-01/1-3.png" alt="1-3" /></p>
+<p><img src="https://raw.githubusercontent.com/kristd/kristd.github.io/master/20170629-01/1-3.png" alt="1-3" /></p>
 
 <p>我们合理配置了我们的集群和自动均衡配置之后，我们可以把服务器的数量降至4x EC2 c4.Large实例，并且Elastic Auto-Scaling设置为如果CPU达到5分钟的90%利用率，我们就会产生新的实例。</p>
 
-<p><img src="https://raw.githubusercontent.com/kristd/snippet/master/image/hugo/20170629-01/1-4.png" alt="1-4" /></p>
+<p><img src="https://raw.githubusercontent.com/kristd/kristd.github.io/master/20170629-01/1-4.png" alt="1-4" /></p>
 
 <h3 id="总结">总结</h3>
 
