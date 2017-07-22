@@ -28,17 +28,20 @@ golang使用recover和panic作为异常捕获机制。
       <pubDate>Tue, 18 Jul 2017 14:34:53 +0800</pubDate>
       
       <guid>https://kristd.github.io/20170718-01/</guid>
-      <description>Golang</description>
+      <description> Golang
+go的regexp包有两种类型函数，比如regexp.MustCompile(string)和regexp.Compile(string)，他们的差别在于Must类型的函数在正则表达式错误时会抛出panic，而非Must类型则会返回error类型。
+函数原型对比
+func Compile(expr string) (*Regexp, error)  func MustCompile(str string) *Regexp  测试代码 r := regexp.MustCompile(&amp;quot;\&amp;quot;(.+)\&amp;quot;&amp;quot;) //return slice strs := r.FindAllString(&amp;quot;Hel\&amp;quot;lo\&amp;quot; Wor\&amp;quot;ld\&amp;quot;&amp;quot;, -1) //return string str := r.FindString(&amp;quot;Hel\&amp;quot;lo\&amp;quot; Wor\&amp;quot;ld\&amp;quot;&amp;quot;)  </description>
     </item>
     
     <item>
-      <title>Golang中websocket/socket的用法归纳</title>
+      <title>Golang中websocket/socket/http用法归纳</title>
       <link>https://kristd.github.io/20170630-01/</link>
       <pubDate>Fri, 30 Jun 2017 15:17:57 +0800</pubDate>
       
       <guid>https://kristd.github.io/20170630-01/</guid>
       <description> Golang
-websocket  socket  </description>
+websocket  socket  http  </description>
     </item>
     
     <item>
