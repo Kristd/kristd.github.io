@@ -20,5 +20,23 @@
       <description></description>
     </item>
     
+    <item>
+      <title>Raft</title>
+      <link>https://kristd.github.io/tags/raft/</link>
+      <pubDate>Wed, 26 Jul 2017 00:35:26 +0800</pubDate>
+      
+      <guid>https://kristd.github.io/tags/raft/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Websocket</title>
+      <link>https://kristd.github.io/tags/websocket/</link>
+      <pubDate>Mon, 24 Jul 2017 09:39:01 +0800</pubDate>
+      
+      <guid>https://kristd.github.io/tags/websocket/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   
-  <title>Golang中websocket/socket/http用法归纳 &middot; TJ Blog</title>
+  <title>分布式Raft协议 &middot; TJ Blog</title>
   
 
   
@@ -48,57 +48,9 @@
 
 		<div class="content container">
 			<div class="post">
-			 	<h1>Golang中websocket/socket/http用法归纳</h1>
-			  <span class="post-date">Fri, Jun 30, 2017</span>
-			      
-
-<p><code>Golang</code></p>
-
-<h3 id="websocket">websocket</h3>
-
-<hr />
-
-<pre><code class="language-go">//server
-func HandleConn(conn *websocket.Conn) {
-    body := make([]byte, 1024)
-    n, _ := conn.Read(body)
-    fmt.Println(&quot;body = [&quot;, string(body[:n]), &quot;]&quot;)
-}
-
-func main()  {
-    http.Handle(&quot;/websocket&quot;, websocket.Handler(HandleConn))
-    err := http.ListenAndServe(&quot;:8888&quot;, nil)
-    if err != nil {
-        fmt.Println(&quot;serve err = [&quot;, err, &quot;]&quot;)
-    }
-}
-
-//client
-func main()  {
-    ws, err := websocket.Dial(&quot;ws://localhost:8888/websocket&quot;, &quot;&quot;, &quot;http://localhost:8888/websocket&quot;)
-    if err != nil {
-        log.Fatal(&quot;err = &quot;, err)
-    } else {
-        log.Println(&quot;success&quot;)
-    }
-
-    ws.Write([]byte(&quot;HelloWorld&quot;))
-    ws.Close()
-}
-
-</code></pre>
-
-<h3 id="socket">socket</h3>
-
-<hr />
-
-<pre><code class="language-go"></code></pre>
-
-<h3 id="http">http</h3>
-
-<hr />
-
-<pre><code class="language-go"></code></pre>
+			 	<h1>分布式Raft协议</h1>
+			  <span class="post-date">Wed, Jul 26, 2017</span>
+			      <p><code>Raft</code></p>
 
 			</div>
 

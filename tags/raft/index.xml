@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Raft on TJ Blog</title>
+    <link>https://kristd.github.io/tags/raft/</link>
+    <description>Recent content in Raft on TJ Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 26 Jul 2017 00:35:26 +0800</lastBuildDate>
+    
+	<atom:link href="https://kristd.github.io/tags/raft/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>分布式Raft协议</title>
+      <link>https://kristd.github.io/20170726-01/</link>
+      <pubDate>Wed, 26 Jul 2017 00:35:26 +0800</pubDate>
+      
+      <guid>https://kristd.github.io/20170726-01/</guid>
+      <description>Raft</description>
+    </item>
+    
+  </channel>
+</rss>

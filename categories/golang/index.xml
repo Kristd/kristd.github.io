@@ -41,7 +41,7 @@ func Compile(expr string) (*Regexp, error)  func MustCompile(str string) *Regexp
       
       <guid>https://kristd.github.io/20170630-01/</guid>
       <description> Golang
-websocket  socket  http  </description>
+websocket //server func HandleConn(conn *websocket.Conn) { body := make([]byte, 1024) n, _ := conn.Read(body) fmt.Println(&amp;quot;body = [&amp;quot;, string(body[:n]), &amp;quot;]&amp;quot;) } func main() { http.Handle(&amp;quot;/websocket&amp;quot;, websocket.Handler(HandleConn)) err := http.ListenAndServe(&amp;quot;:8888&amp;quot;, nil) if err != nil { fmt.Println(&amp;quot;serve err = [&amp;quot;, err, &amp;quot;]&amp;quot;) } } //client func main() { ws, err := websocket.Dial(&amp;quot;ws://localhost:8888/websocket&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;http://localhost:8888/websocket&amp;quot;) if err != nil { log.Fatal(&amp;quot;err = &amp;quot;, err) } else { log.Println(&amp;quot;success&amp;quot;) } ws.Write([]byte(&amp;quot;HelloWorld&amp;quot;)) ws.Close() }  socket  http  </description>
     </item>
     
     <item>

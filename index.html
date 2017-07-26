@@ -53,6 +53,119 @@
       
   <div class="post">
     <h1 class="post-title">
+      <a href="https://kristd.github.io/20170726-01/">
+        分布式Raft协议
+      </a>
+    </h1>
+
+    <span class="post-date">Wed, Jul 26, 2017</span>
+
+    <p><code>Raft</code></p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="https://kristd.github.io/20170724-01/">
+        WebSocket协议简介
+      </a>
+    </h1>
+
+    <span class="post-date">Mon, Jul 24, 2017</span>
+
+    
+
+<p><code>WebSocket</code></p>
+
+<h5 id="原文链接-https-www-zhihu-com-question-20215561-answer-40316953"><a href="https://www.zhihu.com/question/20215561/answer/40316953">原文链接</a></h5>
+
+<p><code>WebSocket</code>是HTML5下一种新的协议，与HTTP协议没有关系，但HTTP是不支持持久连接的。HTTP有1.1和1.0之说，差别在于是否支持keep-alive，把多个HTTP请求合并为一个，但是<code>WebSocket</code>其实是一个新协议，跟HTTP协议基本没有关系，只是为了兼容现有浏览器的握手规范而已，也就是说它是HTTP协议上的一种补充。</p>
+
+<h3 id="websocket是一个持久化的基于http的协议">WebSocket是一个持久化的基于HTTP的协议</h3>
+
+<p>HTTP的生命周期通过Request来界定，也就是一个Request 一个Response，那么在HTTP1.0中，这次HTTP请求就结束了。在HTTP1.1中进行了改进，使得有一个keep-alive，也就是说，在一个HTTP连接中，可以发送多个Request，接收多个Response。但是在HTTP中永远是一个request只能有一个response。而且这个response也是被动的，不能主动发起。</p>
+
+<p><code>WebSocket</code>实现了浏览器与服务器全双工通信，能更好的节省服务器资源和带宽并达到实时通讯的目的。它与HTTP一样通过已建立的TCP连接来传输数据，但是它和HTTP最大不同是：</p>
+
+<blockquote>
+<ol>
+<li><p><code>WebSocket</code>是一种双向通信协议。在建立连接后，<code>WebSocket</code>服务器端和客户端都能主动向对方发送或接收数据，就像Socket一样；</p></li>
+
+<li><p><code>WebSocket</code>需要像TCP一样，先建立连接，连接成功后才能相互通信。</p></li>
+</ol>
+</blockquote>
+
+<p>传统HTTP客户端与服务器请求响应模式如下图所示：</p>
+
+<p><img src="https://raw.githubusercontent.com/kristd/kristd.github.io/master/20170724-01/1-1.png" alt="1-1" /></p>
+
+<p><code>WebSocket</code>模式客户端与服务器请求响应模式如下图：</p>
+
+<p><img src="https://raw.githubusercontent.com/kristd/kristd.github.io/master/20170724-01/1-2.png" alt="1-2" /></p>
+
+<p>上图对比可以看出，相对于传统HTTP每次请求-应答都需要客户端与服务端建立连接的模式，<code>WebSocket</code>是类似Socket的TCP长连接通讯模式。一旦<code>WebSocket</code>连接建立后，后续数据都以帧序列的形式传输。在客户端断开<code>WebSocket</code>连接或Server端中断连接前，不需要客户端和服务端重新发起连接请求。在海量并发及客户端与服务器交互负载流量大的情况下，极大的节省了网络带宽资源的消耗，有明显的性能优势，且客户端发送和接受消息是在同一个持久连接上发起，实时性优势明显。</p>
+
+<p>相比HTTP长连接，<code>WebSocket</code>有以下特点：</p>
+
+<ul>
+<li>是真正的全双工方式，建立连接后客户端与服务器端是完全平等的，可以互相主动请求。而HTTP长连接基于HTTP，是传统的客户端对服务器发起请求的模式。HTTP长连接中，每次数据交换除了真正的数据部分外，服务器和客户端还要大量交换HTTP header，信息交换效率很低。<code>WebSocket</code>协议通过第一个request建立了TCP连接之后，之后交换的数据都不需要发送 HTTP header就能交换数据，这显然和原有的HTTP协议有区别所以它需要对服务器和客户端都进行升级才能实现。</li>
+<li>还有 multiplexing、不同的URL可以复用同一个<code>WebSocket</code>连接等功能。这些都是HTTP长连接不能做到的。</li>
+</ul>
+
+<p>下面再通过客户端和服务端交互的报文对比<code>WebSocket</code>通讯与传统HTTP的不同点，一个典型的<code>WebSocket</code>握手：</p>
+
+<pre><code>GET /chat HTTP/1.1
+Host: server.example.com
+Upgrade: WebSocket
+Connection: Upgrade
+Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==
+Sec-WebSocket-Protocol: chat, superchat
+Sec-WebSocket-Version: 13
+Origin: http://example.com
+</code></pre>
+
+<p>可以看到，客户端发起的<code>WebSocket</code>连接报文类似传统HTTP报文，Sec-<code>WebSocket</code>-Key是<code>WebSocket</code>客户端发送的一个 base64编码的密文，要求服务端必须返回一个对应加密的Sec-<code>WebSocket</code>-Accept应答，否则客户端会抛出Error during <code>WebSocket</code> handshake错误，并关闭连接。</p>
+
+<pre><code>Upgrade: `WebSocket`
+Connection: Upgrade
+</code></pre>
+
+<p>Upgrade：<code>WebSocket</code>参数值表明这是<code>WebSocket</code>类型请求,这个就是<code>WebSocket</code>的核心，告诉服务器发起的是<code>WebSocket</code>协议，不是HTTP协议。</p>
+
+<pre><code>Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==
+Sec-WebSocket-Protocol: chat, superchat
+Sec-WebSocket-Version: 13
+</code></pre>
+
+<p>Sec-WebSocket-Key是<code>WebSocket</code>客户端发送的一个 base64编码的密文，要求服务端必须返回一个对应加密的Sec-WebSocket-Accept应答，否则客户端会抛出<code>Error during WebSocket handshake</code>错误，并关闭连接，这个是浏览器随机生成的.然后，Sec-WebSocket-Protocol 是一个用户定义的字符串，用来区分同URL下，不同的服务所需要的协议。最后，Sec-WebSocket-Version 是告诉服务器所使用的<code>WebSocket</code> Draft（协议版本），在最初的时候，<code>WebSocket</code>协议还在 Draft 阶段，各种奇奇怪怪的协议都有，当初<code>WebSocket</code>协议太多可是一个大难题。。不过现在已经定下来了，然后服务器会返回下列东西，表示已经接受到请求， 成功建立<code>WebSocket</code>。</p>
+
+<pre><code>HTTP/1.1 101 Switching Protocols
+Upgrade: `WebSocket`
+Connection: Upgrade
+Sec-WebSocket-Accept: HSmrc0sMlYUkAGmm5OPpG2HaGWk=
+Sec-WebSocket-Protocol: chat
+</code></pre>
+
+<p>这里开始就是HTTP最后负责的区域了，告诉客户端已经成功切换协议。Sec-<code>WebSocket</code>-Accept的值是服务端采用与客户端一致的密钥计算出来后返回客户端的，HTTP/1.1 101 Switching Protocols表示服务端接受<code>WebSocket</code>协议的客户端连接，经过这样的请求-响应处理后，两端的<code>WebSocket</code>连接握手成功, 后续就可以进行TCP通讯了。用户可以查阅<code>WebSocket</code>协议栈了解<code>WebSocket</code>客户端和服务端更详细的交互数据格式。</p>
+
+<pre><code>Upgrade: WebSocket
+Connection: Upgrade
+</code></pre>
+
+<p>固定字段，告诉客户端即将升级的是<code>WebSocket</code>协议。然后，Sec-<code>WebSocket</code>-Accept 这个则是经过服务器确认，并且加密过后的 Sec-<code>WebSocket</code>-Key。后面的Sec-<code>WebSocket</code>-Protocol 则是表示最终使用的协议。至此，HTTP已经完成它所有工作了，接下来就是完全按照<code>WebSocket</code>协议进行了。</p>
+
+<h3 id="websocket的作用">WebSocket的作用</h3>
+
+<p>在讲<code>WebSocket</code>之前，顺带介绍<code>long poll</code>和<code>ajax</code>轮询的原理。首先是<code>ajax</code>轮询，<code>ajax</code>轮询的原理非常简单，让浏览器隔个几秒就发送一次请求，询问服务器是否有新信息。<code>long poll</code>其实原理跟<code>ajax</code>轮询差不多，都是采用轮询的方式，不过采取的是阻塞模型，也就是说，客户端发起连接后，如果没消息，就一直不返回Response给客户端。直到有消息才返回，返回完之后，客户端再次建立连接，周而复始。从上面可以看出其实这两种方式，都是在不断地建立HTTP连接，然后等待服务端处理，可以体现HTTP协议的另外一个特点，被动性。何为被动性呢，其实就是，服务端不能主动联系客户端，只能有客户端发起，服务端不会、不能主动发起连接，从上面很容易看出来，不管怎么样，上面这两种都是非常消耗资源的。<code>ajax</code>轮询需要服务器有很快的处理速度和资源。<code>long poll</code>需要有很高的并发，也就是说同时接待客户的能力。通过上面这个例子，我们可以看出，这两种方式都不是最好的方式，需要很多资源。一种需要更快的速度，一种需要更多的资源。这两种都会导致资源的需求越来越高。</p>
+
+<p>而且HTTP还是一种无状态协议，所以在这种情况下<code>WebSocket</code>出现了。他解决了HTTP的这几个难题。首先，被动性，当服务器完成协议升级后（HTTP-&gt;<code>WebSocket</code>），服务端就可以主动推送信息给客户端啦。只需要经过一次HTTP请求，就可以做到源源不断的信息传送了。这样的协议解决了上面同步有延迟，而且还非常消耗资源的这种情况。那么为什么他会解决服务器上消耗资源的问题呢？其实我们所用的程序是要经过两层代理的，即HTTP协议在Nginx等服务器的解析下，然后再传送给相应的Handler来处理。</p>
+
+<p><code>WebSocket</code>就解决了这样一个难题，建立后，可以直接跟Handler建立持久连接。同时，在传统的方式上，要不断的建立，关闭HTTP协议，由于HTTP是非状态性的，每次都要重新传输identity info（鉴别信息），来告诉服务端你是谁。虽然Nginx很快速，但是每次重复处理请求效率也会有所下降的，同时还得不断把这些信息转交给Handler，不但浪费Handler的处理时间，而且还会在网路传输中消耗过多的流量/时间。但是<code>WebSocket</code>只需要一次HTTP握手，所以说整个通讯过程是建立在一次连接/状态中，也就避免了HTTP的非状态性，服务端会一直知道你的信息，直到你关闭请求，这样就解决了Nginx要反复解析HTTP协议，还要查看identity info的信息。同时由客户主动询问，转换为服务器有信息的时候就推送，没有信息的时候就交给Nginx，不需要占用本身速度就慢的Handler了</p>
+
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
       <a href="https://kristd.github.io/20170719-01/">
         Golang异常捕捉方法recover和panic
       </a>
@@ -176,7 +289,34 @@ str := r.FindString(&quot;Hel\&quot;lo\&quot; Wor\&quot;ld\&quot;&quot;)
 
 <hr />
 
-<pre><code class="language-go">
+<pre><code class="language-go">//server
+func HandleConn(conn *websocket.Conn) {
+    body := make([]byte, 1024)
+    n, _ := conn.Read(body)
+    fmt.Println(&quot;body = [&quot;, string(body[:n]), &quot;]&quot;)
+}
+
+func main()  {
+    http.Handle(&quot;/websocket&quot;, websocket.Handler(HandleConn))
+    err := http.ListenAndServe(&quot;:8888&quot;, nil)
+    if err != nil {
+        fmt.Println(&quot;serve err = [&quot;, err, &quot;]&quot;)
+    }
+}
+
+//client
+func main()  {
+    ws, err := websocket.Dial(&quot;ws://localhost:8888/websocket&quot;, &quot;&quot;, &quot;http://localhost:8888/websocket&quot;)
+    if err != nil {
+        log.Fatal(&quot;err = &quot;, err)
+    } else {
+        log.Println(&quot;success&quot;)
+    }
+
+    ws.Write([]byte(&quot;HelloWorld&quot;))
+    ws.Close()
+}
+
 </code></pre>
 
 <h3 id="socket">socket</h3>

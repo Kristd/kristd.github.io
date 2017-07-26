@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://kristd.github.io/20170726-01/</loc>
+    <lastmod>2017-07-26T00:35:26+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kristd.github.io/20170724-01/</loc>
+    <lastmod>2017-07-24T09:39:01+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kristd.github.io/20170719-01/</loc>
     <lastmod>2017-07-19T16:04:45+08:00</lastmod>
   </url>
@@ -50,14 +60,38 @@
   </url>
   
   <url>
+    <loc>https://kristd.github.io/tags/raft/</loc>
+    <lastmod>2017-07-26T00:35:26+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kristd.github.io/categories/raft/</loc>
+    <lastmod>2017-07-26T00:35:26+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://kristd.github.io/</loc>
-    <lastmod>2017-07-19T16:04:45+08:00</lastmod>
+    <lastmod>2017-07-26T00:35:26+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kristd.github.io/tags/</loc>
     <lastmod>2017-07-19T16:04:45+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kristd.github.io/tags/websocket/</loc>
+    <lastmod>2017-07-24T09:39:01+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kristd.github.io/categories/websocket/</loc>
+    <lastmod>2017-07-24T09:39:01+08:00</lastmod>
     <priority>0</priority>
   </url>
   
