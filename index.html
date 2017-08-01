@@ -1,733 +1,135 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
-<head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.24" />
+<html lang="en-us">
+  <head>
+	<meta name="generator" content="Hugo 0.24" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home | TJ&#39;s Blog</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    <header>
 
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  
-  <title>TJ Blog</title>
-  
-
-  
-  <link rel="stylesheet" href="https://kristd.github.io/css/poole.css">
-  <link rel="stylesheet" href="https://kristd.github.io/css/syntax.css">
-  <link rel="stylesheet" href="https://kristd.github.io/css/hyde.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-
-  
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
-  <link rel="shortcut icon" href="/favicon.png">
-
-  
-  <link href="https://kristd.github.io/index.xml" rel="alternate" type="application/rss+xml" title="TJ Blog" />
-</head>
-
-<body class=" ">
-
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <a href="https://kristd.github.io/"><h1>TJ Blog</h1></a>
-      <p class="lead">
-      made by <a href="http://twitter.com/mdo">@mdo</a> 
-      </p>
-    </div>
-
-    <ul class="sidebar-nav">
-      <li><a href="/">Home</a> </li>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <nav>
+    <ul>
       
-	</ul>
-
-    <p>&copy; 2017. All rights reserved. </p>
-  </div>
-</div>
-
-
-    <div class="content container">
-<div class="posts">
+      
+      
+      
+      <li class="pull-left current">
+        <a href="/">~/home</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="/categories/">~/categories</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="/tags/">~/tags</a>
+      </li>
+      
 
       
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://kristd.github.io/20170726-01/">
-        分布式Raft协议
-      </a>
-    </h1>
+      
+      <li class="pull-right">
+        <a href="/index.xml">~/subscribe</a>
+      </li>
+      
 
-    <span class="post-date">Wed, Jul 26, 2017</span>
+    </ul>
+  </nav>
+</header>
 
-    <p><code>Raft</code></p>
+  </head>
 
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://kristd.github.io/20170724-01/">
-        WebSocket协议简介
-      </a>
-    </h1>
+  <body>
+    <br/>
 
-    <span class="post-date">Mon, Jul 24, 2017</span>
 
-    
 
-<p><code>WebSocket</code></p>
 
-<h5 id="原文链接-https-www-zhihu-com-question-20215561-answer-40316953"><a href="https://www.zhihu.com/question/20215561/answer/40316953">原文链接</a></h5>
 
-<p><code>WebSocket</code>是HTML5下一种新的协议，与HTTP协议没有关系，但HTTP是不支持持久连接的。HTTP有1.1和1.0之说，差别在于是否支持keep-alive，把多个HTTP请求合并为一个，但是<code>WebSocket</code>其实是一个新协议，跟HTTP协议基本没有关系，只是为了兼容现有浏览器的握手规范而已，也就是说它是HTTP协议上的一种补充。</p>
 
-<h3 id="websocket是一个持久化的基于http的协议">WebSocket是一个持久化的基于HTTP的协议</h3>
+<p><a href="https://github.com/goodroot/hugo-classic"><img src="https://github.com/goodroot/hugo-classic/raw/master/images/partywizard.gif" style="max-width:15%;min-width:40px;float:right;" alt="Github repo" /></a></p>
 
-<p>HTTP的生命周期通过Request来界定，也就是一个Request 一个Response，那么在HTTP1.0中，这次HTTP请求就结束了。在HTTP1.1中进行了改进，使得有一个keep-alive，也就是说，在一个HTTP连接中，可以发送多个Request，接收多个Response。但是在HTTP中永远是一个request只能有一个response。而且这个response也是被动的，不能主动发起。</p>
+<h1 id="tj-s-blog">TJ&rsquo;s Blog</h1>
 
-<p><code>WebSocket</code>实现了浏览器与服务器全双工通信，能更好的节省服务器资源和带宽并达到实时通讯的目的。它与HTTP一样通过已建立的TCP连接来传输数据，但是它和HTTP最大不同是：</p>
+<p>About twenty years ago Jobs and Wozniak, the founders of Apple, came up with the very strange idea of selling information processing machines for use in the home. The business took off, and its founders made a lot of money and received the credit they deserved for being daring visionaries. But around the same time, Bill Gates and Paul Allen came up with an idea even stranger and more fantastical: selling computer operating systems. This was much weirder than the idea of Jobs and Wozniak.</p>
 
-<blockquote>
-<ol>
-<li><p><code>WebSocket</code>是一种双向通信协议。在建立连接后，<code>WebSocket</code>服务器端和客户端都能主动向对方发送或接收数据，就像Socket一样；</p></li>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#define __(a) goto a;
+#define ___(a) putchar(a);
+#define _(a,b) ___(a) __(b);
+void main()
+{ 
+_:__(t)a:_('r',g)b:_('$',p)
+ c:_('l',f)d:_(' ',s)e:_('a',s)
+ f:_('o',q)g:_('l',h)h:_('d',n)
+ i:_('e',w)j:_('e',x)k:_('\n',z)
+ l:_('H',l)m:_('X',i)n:_('!',k)
+ o:_('z',q)p:_('q',b)q:_(',',d)
+ r:_('i',l)s:_('w',v)t:_('H',j)
+ u:_('a',a)v:_('o',a)w:_(')',k)
+x:_('l',c)y:_('\t',g)z:___(0x0)
+}
+</code></pre>
 
-<li><p><code>WebSocket</code>需要像TCP一样，先建立连接，连接成功后才能相互通信。</p></li>
-</ol>
-</blockquote>
+<h3 id="blog">Blog</h3>
 
-<p>传统HTTP客户端与服务器请求响应模式如下图所示：</p>
-
-<p><img src="https://raw.githubusercontent.com/kristd/kristd.github.io/master/20170724-01/1-1.jpg" alt="1-1" /></p>
-
-<p><code>WebSocket</code>模式客户端与服务器请求响应模式如下图：</p>
-
-<p><img src="https://raw.githubusercontent.com/kristd/kristd.github.io/master/20170724-01/1-2.jpg" alt="1-2" /></p>
-
-<p>上图对比可以看出，相对于传统HTTP每次请求-应答都需要客户端与服务端建立连接的模式，<code>WebSocket</code>是类似Socket的TCP长连接通讯模式。一旦<code>WebSocket</code>连接建立后，后续数据都以帧序列的形式传输。在客户端断开<code>WebSocket</code>连接或Server端中断连接前，不需要客户端和服务端重新发起连接请求。在海量并发及客户端与服务器交互负载流量大的情况下，极大的节省了网络带宽资源的消耗，有明显的性能优势，且客户端发送和接受消息是在同一个持久连接上发起，实时性优势明显。</p>
-
-<p>相比HTTP长连接，<code>WebSocket</code>有以下特点：</p>
 
 <ul>
-<li>是真正的全双工方式，建立连接后客户端与服务器端是完全平等的，可以互相主动请求。而HTTP长连接基于HTTP，是传统的客户端对服务器发起请求的模式。HTTP长连接中，每次数据交换除了真正的数据部分外，服务器和客户端还要大量交换HTTP header，信息交换效率很低。<code>WebSocket</code>协议通过第一个request建立了TCP连接之后，之后交换的数据都不需要发送 HTTP header就能交换数据，这显然和原有的HTTP协议有区别所以它需要对服务器和客户端都进行升级才能实现。</li>
-<li>还有 multiplexing、不同的URL可以复用同一个<code>WebSocket</code>连接等功能。这些都是HTTP长连接不能做到的。</li>
+  
+  <li>
+    <span class="date">2017/07/30</span>
+    <a href="/post/2017/07/30/websocket%E5%8D%8F%E8%AE%AE%E7%AE%80%E4%BB%8B/">WebSocket协议简介</a>
+  </li>
+  
+  <li>
+    <span class="date">2017/07/26</span>
+    <a href="/post/2017/07/26/%E5%88%86%E5%B8%83%E5%BC%8Fraft%E5%8D%8F%E8%AE%AE/">分布式Raft协议</a>
+  </li>
+  
+  <li>
+    <span class="date">2017/07/19</span>
+    <a href="/post/2017/07/19/golang%E5%BC%82%E5%B8%B8%E6%8D%95%E6%8D%89%E6%96%B9%E6%B3%95recover%E5%92%8Cpanic/">Golang异常捕捉方法recover和panic</a>
+  </li>
+  
+  <li>
+    <span class="date">2017/07/18</span>
+    <a href="/post/2017/07/18/golang%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95/">Golang正则表达式简单用法</a>
+  </li>
+  
+  <li>
+    <span class="date">2017/06/30</span>
+    <a href="/post/2017/06/30/golang%E4%B8%ADwebsocket/socket/http%E7%94%A8%E6%B3%95%E5%BD%92%E7%BA%B3/">Golang中websocket/socket/http用法归纳</a>
+  </li>
+  
+  <li>
+    <span class="date">2017/06/29</span>
+    <a href="/post/2017/06/29/%E4%BD%BF%E7%94%A8go%E8%AF%AD%E8%A8%80%E6%AF%8F%E5%88%86%E9%92%9F%E5%A4%84%E7%90%861%E7%99%BE%E4%B8%87%E8%AF%B7%E6%B1%82/">使用Go语言每分钟处理1百万请求</a>
+  </li>
+  
+  <li>
+    <span class="date">2017/06/28</span>
+    <a href="/post/2017/06/28/golang%E4%BD%BF%E7%94%A8%E6%96%AD%E8%A8%80%E8%BF%9B%E8%A1%8C%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">Golang使用断言进行类型转换</a>
+  </li>
+  
 </ul>
 
-<p>下面再通过客户端和服务端交互的报文对比<code>WebSocket</code>通讯与传统HTTP的不同点，一个典型的<code>WebSocket</code>握手：</p>
-
-<pre><code>GET /chat HTTP/1.1
-Host: server.example.com
-Upgrade: WebSocket
-Connection: Upgrade
-Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==
-Sec-WebSocket-Protocol: chat, superchat
-Sec-WebSocket-Version: 13
-Origin: http://example.com
-</code></pre>
-
-<p>可以看到，客户端发起的<code>WebSocket</code>连接报文类似传统HTTP报文，Sec-<code>WebSocket</code>-Key是<code>WebSocket</code>客户端发送的一个 base64编码的密文，要求服务端必须返回一个对应加密的Sec-<code>WebSocket</code>-Accept应答，否则客户端会抛出Error during <code>WebSocket</code> handshake错误，并关闭连接。</p>
-
-<pre><code>Upgrade: `WebSocket`
-Connection: Upgrade
-</code></pre>
-
-<p>Upgrade：<code>WebSocket</code>参数值表明这是<code>WebSocket</code>类型请求,这个就是<code>WebSocket</code>的核心，告诉服务器发起的是<code>WebSocket</code>协议，不是HTTP协议。</p>
-
-<pre><code>Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw==
-Sec-WebSocket-Protocol: chat, superchat
-Sec-WebSocket-Version: 13
-</code></pre>
-
-<p>Sec-WebSocket-Key是<code>WebSocket</code>客户端发送的一个 base64编码的密文，要求服务端必须返回一个对应加密的Sec-WebSocket-Accept应答，否则客户端会抛出<code>Error during WebSocket handshake</code>错误，并关闭连接，这个是浏览器随机生成的.然后，Sec-WebSocket-Protocol 是一个用户定义的字符串，用来区分同URL下，不同的服务所需要的协议。最后，Sec-WebSocket-Version 是告诉服务器所使用的<code>WebSocket</code> Draft（协议版本），在最初的时候，<code>WebSocket</code>协议还在 Draft 阶段，各种奇奇怪怪的协议都有，当初<code>WebSocket</code>协议太多可是一个大难题。。不过现在已经定下来了，然后服务器会返回下列东西，表示已经接受到请求， 成功建立<code>WebSocket</code>。</p>
-
-<pre><code>HTTP/1.1 101 Switching Protocols
-Upgrade: `WebSocket`
-Connection: Upgrade
-Sec-WebSocket-Accept: HSmrc0sMlYUkAGmm5OPpG2HaGWk=
-Sec-WebSocket-Protocol: chat
-</code></pre>
-
-<p>这里开始就是HTTP最后负责的区域了，告诉客户端已经成功切换协议。Sec-<code>WebSocket</code>-Accept的值是服务端采用与客户端一致的密钥计算出来后返回客户端的，HTTP/1.1 101 Switching Protocols表示服务端接受<code>WebSocket</code>协议的客户端连接，经过这样的请求-响应处理后，两端的<code>WebSocket</code>连接握手成功, 后续就可以进行TCP通讯了。用户可以查阅<code>WebSocket</code>协议栈了解<code>WebSocket</code>客户端和服务端更详细的交互数据格式。</p>
-
-<pre><code>Upgrade: WebSocket
-Connection: Upgrade
-</code></pre>
-
-<p>固定字段，告诉客户端即将升级的是<code>WebSocket</code>协议。然后，Sec-<code>WebSocket</code>-Accept 这个则是经过服务器确认，并且加密过后的 Sec-<code>WebSocket</code>-Key。后面的Sec-<code>WebSocket</code>-Protocol 则是表示最终使用的协议。至此，HTTP已经完成它所有工作了，接下来就是完全按照<code>WebSocket</code>协议进行了。</p>
-
-<h3 id="websocket的作用">WebSocket的作用</h3>
-
-<p>在讲<code>WebSocket</code>之前，顺带介绍<code>long poll</code>和<code>ajax</code>轮询的原理。首先是<code>ajax</code>轮询，<code>ajax</code>轮询的原理非常简单，让浏览器隔个几秒就发送一次请求，询问服务器是否有新信息。<code>long poll</code>其实原理跟<code>ajax</code>轮询差不多，都是采用轮询的方式，不过采取的是阻塞模型，也就是说，客户端发起连接后，如果没消息，就一直不返回Response给客户端。直到有消息才返回，返回完之后，客户端再次建立连接，周而复始。从上面可以看出其实这两种方式，都是在不断地建立HTTP连接，然后等待服务端处理，可以体现HTTP协议的另外一个特点，被动性。何为被动性呢，其实就是，服务端不能主动联系客户端，只能有客户端发起，服务端不会、不能主动发起连接，从上面很容易看出来，不管怎么样，上面这两种都是非常消耗资源的。<code>ajax</code>轮询需要服务器有很快的处理速度和资源。<code>long poll</code>需要有很高的并发，也就是说同时接待客户的能力。通过上面这个例子，我们可以看出，这两种方式都不是最好的方式，需要很多资源。一种需要更快的速度，一种需要更多的资源。这两种都会导致资源的需求越来越高。</p>
-
-<p>而且HTTP还是一种无状态协议，所以在这种情况下<code>WebSocket</code>出现了。他解决了HTTP的这几个难题。首先，被动性，当服务器完成协议升级后（HTTP-&gt;<code>WebSocket</code>），服务端就可以主动推送信息给客户端啦。只需要经过一次HTTP请求，就可以做到源源不断的信息传送了。这样的协议解决了上面同步有延迟，而且还非常消耗资源的这种情况。那么为什么他会解决服务器上消耗资源的问题呢？其实我们所用的程序是要经过两层代理的，即HTTP协议在Nginx等服务器的解析下，然后再传送给相应的Handler来处理。</p>
-
-<p><code>WebSocket</code>就解决了这样一个难题，建立后，可以直接跟Handler建立持久连接。同时，在传统的方式上，要不断的建立，关闭HTTP协议，由于HTTP是非状态性的，每次都要重新传输identity info（鉴别信息），来告诉服务端你是谁。虽然Nginx很快速，但是每次重复处理请求效率也会有所下降的，同时还得不断把这些信息转交给Handler，不但浪费Handler的处理时间，而且还会在网路传输中消耗过多的流量/时间。但是<code>WebSocket</code>只需要一次HTTP握手，所以说整个通讯过程是建立在一次连接/状态中，也就避免了HTTP的非状态性，服务端会一直知道你的信息，直到你关闭请求，这样就解决了Nginx要反复解析HTTP协议，还要查看identity info的信息。同时由客户主动询问，转换为服务器有信息的时候就推送，没有信息的时候就交给Nginx，不需要占用本身速度就慢的Handler了</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://kristd.github.io/20170719-01/">
-        Golang异常捕捉方法recover和panic
-      </a>
-    </h1>
-
-    <span class="post-date">Wed, Jul 19, 2017</span>
-
-    
-
-<p><code>Golang</code></p>
-
-<p>golang使用recover和panic作为异常捕获机制。</p>
-
-<ul>
-<li>panic可以是用户主动调用抛出异常，也可以是一般程序执行中发生的异常，如内存访问错误等。</li>
-<li>recover用于捕获panic抛出的异常，特别的是recover只能放在defer的关键字声明的函数体中使用。类似于C++中的try-catch，panic抛出的异常可以被同一层的recover或者上一层的recover捕获，具体依赖于recover所在的位置。</li>
-</ul>
-
-<h3 id="recover和panic的定义">recover和panic的定义</h3>
-
-<hr />
-
-<pre><code class="language-go">//一般输出error类型
-func recover() interface{}
-</code></pre>
-
-<pre><code class="language-go">//interface接受任何类型的输入
-func panic(v ...interface{})
-</code></pre>
-
-<h3 id="测试代码">测试代码</h3>
-
-<hr />
-
-<pre><code class="language-go">func main() {
-    defer func() {
-        //catch exception
-        if err := recover(); err != nil {
-            fmt.Println(err)
-        }
-        //defer stack
-        fmt.Println(&quot;first defer&quot;)
-    }()
-
-    defer func() {
-        //defer stack
-        fmt.Println(&quot;second defer&quot;)
-    }()
-    f()
-}
-
-func f() {
-    a := []string{&quot;a&quot;, &quot;b&quot;}
-    //throw exception
-    defer func() {
-        if err := recover(); err != nil {
-            fmt.Println(&quot;f err = &quot;, err)
-        }
-    }()
-
-    fmt.Println(a[3])
-    //never reach
-    fmt.Println(&quot;f end&quot;)
-}
-</code></pre>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://kristd.github.io/20170718-01/">
-        Golang正则表达式简单用法
-      </a>
-    </h1>
-
-    <span class="post-date">Tue, Jul 18, 2017</span>
-
-    
-
-<p><code>Golang</code></p>
-
-<p>go的regexp包有两种类型函数，比如<code>regexp.MustCompile(string)</code>和<code>regexp.Compile(string)</code>，他们的差别在于<code>Must</code>类型的函数在正则表达式错误时会抛出<code>panic</code>，而非<code>Must</code>类型则会返回<code>error</code>类型。</p>
-
-<p><strong>函数原型对比</strong></p>
-
-<pre><code class="language-go">func Compile(expr string) (*Regexp, error)
-</code></pre>
-
-<pre><code class="language-go">func MustCompile(str string) *Regexp
-</code></pre>
-
-<h3 id="测试代码">测试代码</h3>
-
-<hr />
-
-<pre><code class="language-go">r := regexp.MustCompile(&quot;\&quot;(.+)\&quot;&quot;)
-
-//return slice
-strs := r.FindAllString(&quot;Hel\&quot;lo\&quot; Wor\&quot;ld\&quot;&quot;, -1)
-
-//return string
-str := r.FindString(&quot;Hel\&quot;lo\&quot; Wor\&quot;ld\&quot;&quot;)
-</code></pre>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://kristd.github.io/20170630-01/">
-        Golang中websocket/socket/http用法归纳
-      </a>
-    </h1>
-
-    <span class="post-date">Fri, Jun 30, 2017</span>
-
-    
-
-<p><code>Golang</code></p>
-
-<h3 id="websocket">websocket</h3>
-
-<hr />
-
-<pre><code class="language-go">//server
-func HandleConn(conn *websocket.Conn) {
-    body := make([]byte, 1024)
-    n, _ := conn.Read(body)
-    fmt.Println(&quot;body = [&quot;, string(body[:n]), &quot;]&quot;)
-}
-
-func main()  {
-    http.Handle(&quot;/websocket&quot;, websocket.Handler(HandleConn))
-    err := http.ListenAndServe(&quot;:8888&quot;, nil)
-    if err != nil {
-        fmt.Println(&quot;serve err = [&quot;, err, &quot;]&quot;)
-    }
-}
-
-//client
-func main()  {
-    ws, err := websocket.Dial(&quot;ws://localhost:8888/websocket&quot;, &quot;&quot;, &quot;http://localhost:8888/websocket&quot;)
-    if err != nil {
-        log.Fatal(&quot;err = &quot;, err)
-    } else {
-        log.Println(&quot;success&quot;)
-    }
-
-    ws.Write([]byte(&quot;HelloWorld&quot;))
-    ws.Close()
-}
-
-</code></pre>
-
-<h3 id="socket">socket</h3>
-
-<hr />
-
-<pre><code class="language-go"></code></pre>
-
-<h3 id="http">http</h3>
-
-<hr />
-
-<pre><code class="language-go"></code></pre>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://kristd.github.io/20170629-01/">
-        使用Go语言每分钟处理1百万请求
-      </a>
-    </h1>
-
-    <span class="post-date">Thu, Jun 29, 2017</span>
-
-    
-
-<p><code>Golang</code></p>
-
-<h4 id="译文链接-https-github-com-itfanr-articles-about-golang-blob-master-2016-10-1-handling-1-million-requests-per-minute-with-golang-md-原文链接-http-marcio-io-2015-07-handling-1-million-requests-per-minute-with-golang"><a href="https://github.com/itfanr/articles-about-golang/blob/master/2016-10/1.handling-1-million-requests-per-minute-with-golang.md">译文链接</a> | <a href="http://marcio.io/2015/07/handling-1-million-requests-per-minute-with-golang/">原文链接</a></h4>
-
-<p>在Malwarebytes 我们经历了显著的增长，自从我一年前加入了硅谷的公司，一个主要的职责成了设计架构和开发一些系统来支持一个快速增长的信息安全公司和所有需要的设施来支持一个每天百万用户使用的产品。我在反病毒和反恶意软件行业的不同公司工作了12年，从而我知道由于我们每天处理大量的数据，这些系统是多么复杂。</p>
-
-<p>有趣的是，在过去的大约9年间，我参与的所有的web后端的开发通常是通过Ruby on Rails技术实现的。不要错怪我。我喜欢Ruby on Rails，并且我相信它是个令人惊讶的环境。但是一段时间后，你会开始以ruby的方式开始思考和设计系统，你会忘记，如果你可以利用多线程、并行、快速执行和小内存开销，软件架构本来应该是多么高效和简单。很多年期间，我是一个c/c++、Delphi和c#开发者，我刚开始意识到使用正确的工具可以把复杂的事情变得简单些。</p>
-
-<p>作为首席架构师，我不会很关心在互联网上的语言和框架战争。我相信效率、生产力。代码可维护性主要依赖于你如何把解决方案设计得很简单。</p>
-
-<h3 id="问题">问题</h3>
-
-<hr />
-
-<p>当工作在我们的匿名遥测和分析系统中，我们的目标是可以处理来自于百万级别的终端的大量的POST请求。web处理服务可以接收包含了很多payload的集合的JSON数据，这些数据需要写入Amazon S3中。接下来，map-reduce系统可以操作这些数据。</p>
-
-<p>按照习惯，我们会调研服务层级架构，涉及的软件如下：</p>
-
-<ul>
-<li><strong>Sidekiq</strong><br /></li>
-<li><strong>Resque</strong></li>
-<li><strong>DelayedJob</strong></li>
-<li><strong>Elasticbeanstalk Worker Tier</strong></li>
-<li><strong>RabbitMQ</strong></li>
-<li><strong>and so on…</strong><br /></li>
-</ul>
-
-<p>搭建了2个不同的集群，一个提供web前端，另外一个提供后端处理，这样我们可以横向扩展后端服务的数量。</p>
-
-<p>但是，从刚开始，在讨论阶段我们的团队就知道我们应该使用Go，因为我们看到这会潜在性地成为一个非常庞大（ large traffic）的系统。我已经使用了Go语言大约2年时间，我们开发了几个系统，但是很少会达到这样的负载（amount of load）。</p>
-
-<p>我们开始创建一些结构，定义从POST调用得到的web请求负载，还有一个上传到S3 budket的函数。</p>
-
-<pre><code class="language-go">type PayloadCollection struct {
-    WindowsVersion  string    `json:&quot;version&quot;`
-    Token           string    `json:&quot;token&quot;`
-    Payloads        []Payload `json:&quot;data&quot;`
-}
-
-type Payload struct {
-    // [redacted]
-}
-
-func (p *Payload) UploadToS3() error {
-    // the storageFolder method ensures that there are no name collision in
-    // case we get same timestamp in the key name
-    storage_path := fmt.Sprintf(&quot;%v/%v&quot;, p.storageFolder, time.Now().UnixNano())
-
-    bucket := S3Bucket
-
-    b := new(bytes.Buffer)
-    encodeErr := json.NewEncoder(b).Encode(payload)
-    if encodeErr != nil {
-        return encodeErr
-    }
-
-    // Everything we post to the S3 bucket should be marked 'private'
-    var acl = s3.Private
-    var contentType = &quot;application/octet-stream&quot;
-
-    return bucket.PutReader(storage_path, b, int64(b.Len()), contentType, acl, s3.Options{})
-}
-</code></pre>
-
-<h3 id="本地go-routines方法">本地Go routines方法</h3>
-
-<hr />
-
-<p>刚开始，我们采用了一个非常本地化的POST处理实现，仅仅尝试把发到简单go routine的job并行化</p>
-
-<pre><code class="language-go">func payloadHandler(w http.ResponseWriter, r *http.Request) {
-
-    if r.Method != &quot;POST&quot; {
-        w.WriteHeader(http.StatusMethodNotAllowed)
-        return
-    }
-
-    // Read the body into a string for json decoding
-    var content = &amp;PayloadCollection{}
-    err := json.NewDecoder(io.LimitReader(r.Body, MaxLength)).Decode(&amp;content)
-    if err != nil {
-        w.Header().Set(&quot;Content-Type&quot;, &quot;application/json; charset=UTF-8&quot;)
-        w.WriteHeader(http.StatusBadRequest)
-        return
-    }
-
-    // Go through each payload and queue items individually to be posted to S3
-    for _, payload := range content.Payloads {
-        go payload.UploadToS3()   // &lt;----- DON'T DO THIS
-    }
-
-    w.WriteHeader(http.StatusOK)
-}
-</code></pre>
-
-<p>对于中小负载，这会对大多数的人适用，但是大规模下，这个方案会很快被证明不是很好用。我们期望的请求数，不在我们刚开始计划的数量级，当我们把第一个版本部署到生产环境上。我们完全低估了流量。</p>
-
-<p>上面的方案在很多地方很不好。没有办法控制我们产生的go routine的数量。由于我们收到了每分钟1百万的POST请求，这段代码很快就崩溃了。</p>
-
-<h3 id="再次尝试">再次尝试</h3>
-
-<hr />
-
-<p>我们需要找一个不同的方式。自开始我们就讨论过， 我们需要保持请求处理程序的生命周期很短，并且进程在后台产生。当然，这是你在Ruby on Rails的世界里必须要做的事情，否则你会阻塞在所有可用的工作 web处理器上，不管你是使用puma、unicore还是passenger（我们不要讨论JRuby这个话题）。然后我们需要利用常用的处理方案来做这些，比如Resque、 Sidekiq、 SQS等。这个列表会继续保留，因为有很多的方案可以实现这些。</p>
-
-<p>所以，第二次迭代，我们创建了一个缓冲channel，我们可以把job排队，然后把它们上传到S3。因为我们可以控制我们队列中的item最大值，我们有大量的内存来排列job，我们认为只要把job在channel里面缓冲就可以了。</p>
-
-<pre><code class="language-go">var Queue chan Payload
-
-func init() {
-    Queue = make(chan Payload, MAX_QUEUE)
-}
-
-func payloadHandler(w http.ResponseWriter, r *http.Request) {
-    ...
-    // Go through each payload and queue items individually to be posted to S3
-    for _, payload := range content.Payloads {
-        Queue &lt;- payload
-    }
-    ...
-}
-</code></pre>
-
-<p>接下来，我们再从队列中取job，然后处理它们。我们使用类似于下面的代码：</p>
-
-<pre><code class="language-go">func StartProcessor() {
-    for {
-        select {
-        case job := &lt;-Queue:
-            job.payload.UploadToS3()  // &lt;-- STILL NOT GOOD
-        }
-    }
-}
-</code></pre>
-
-<p>说实话，我不知道我们在想什么。这肯定是一个满是Red-Bulls的夜晚。这个方法不会带来什么改善，我们用了一个 有缺陷的缓冲队列并发，仅仅是把问题推迟了。我们的同步处理器同时仅仅会上传一个数据到S3，因为来到的请求远远大于单核处理器上传到S3的能力，我们的带缓冲channel很快达到了它的极限，然后阻塞了请求处理逻辑的queue更多item的能力。</p>
-
-<p>我们仅仅避免了问题，同时开始了我们的系统挂掉的倒计时。当部署了这个有缺陷的版本后，我们的延时保持在每分钟以常量增长。</p>
-
-<p><img src="https://raw.githubusercontent.com/kristd/kristd.github.io/master/20170629-01/1-1.png" alt="1-1" /></p>
-
-<h3 id="最好的解决方案">最好的解决方案</h3>
-
-<hr />
-
-<p>我们讨论过在使用用Go channel时利用一种常用的模式，来创建一个二级channel系统，一个来queue job，另外一个来控制使用多少个worker来并发操作JobQueue。</p>
-
-<p>想法是，以一个恒定速率并行上传到S3，既不会导致机器崩溃也不好产生S3的连接错误。这样我们选择了创建一个Job/Worker模式。对于那些熟悉Java、C#等语言的开发者，可以把这种模式想象成利用channel以golang的方式来实现了一个worker线程池，作为一种替代。</p>
-
-<pre><code class="language-go">var (
-    MaxWorker = os.Getenv(&quot;MAX_WORKERS&quot;)
-    MaxQueue  = os.Getenv(&quot;MAX_QUEUE&quot;)
-)
-
-// Job represents the job to be run
-type Job struct {
-    Payload Payload
-}
-
-// A buffered channel that we can send work requests on.
-var JobQueue chan Job
-
-// Worker represents the worker that executes the job
-type Worker struct {
-    WorkerPool  chan chan Job
-    JobChannel  chan Job
-    quit        chan bool
-}
-
-func NewWorker(workerPool chan chan Job) Worker {
-    return Worker{
-        WorkerPool: workerPool,
-        JobChannel: make(chan Job),
-        quit:       make(chan bool)}
-}
-
-// Start method starts the run loop for the worker, listening for a quit channel in
-// case we need to stop it
-func (w Worker) Start() {
-    go func() {
-        for {
-            // register the current worker into the worker queue.
-            w.WorkerPool &lt;- w.JobChannel
-
-            select {
-            case job := &lt;-w.JobChannel:
-                // we have received a work request.
-                if err := job.Payload.UploadToS3(); err != nil {
-                    log.Errorf(&quot;Error uploading to S3: %s&quot;, err.Error())
-                }
-
-            case &lt;-w.quit:
-                // we have received a signal to stop
-                return
-            }
-        }
-    }()
-}
-
-// Stop signals the worker to stop listening for work requests.
-func (w Worker) Stop() {
-    go func() {
-        w.quit &lt;- true
-    }()
-}
-</code></pre>
-
-<p>我们已经修改了我们的web请求handler，用payload创建一个Job实例，然后发到JobQueue channel，以便于worker来获取。</p>
-
-<pre><code class="language-go">func payloadHandler(w http.ResponseWriter, r *http.Request) {
-
-    if r.Method != &quot;POST&quot; {
-        w.WriteHeader(http.StatusMethodNotAllowed)
-        return
-    }
-
-    // Read the body into a string for json decoding
-    var content = &amp;PayloadCollection{}
-    err := json.NewDecoder(io.LimitReader(r.Body, MaxLength)).Decode(&amp;content)
-    if err != nil {
-        w.Header().Set(&quot;Content-Type&quot;, &quot;application/json; charset=UTF-8&quot;)
-        w.WriteHeader(http.StatusBadRequest)
-        return
-    }
-
-    // Go through each payload and queue items individually to be posted to S3
-    for _, payload := range content.Payloads {
-
-        // let's create a job with the payload
-        work := Job{Payload: payload}
-
-        // Push the work onto the queue.
-        JobQueue &lt;- work
-    }
-
-    w.WriteHeader(http.StatusOK)
-}
-</code></pre>
-
-<p>在web server初始化时，我们创建一个Dispatcher，然后调用Run()函数创建一个worker池子，然后开始监听JobQueue中的job。</p>
-
-<pre><code class="language-go">dispatcher := NewDispatcher(MaxWorker)
-dispatcher.Run()
-</code></pre>
-
-<p>下面是dispatcher的实现代码：</p>
-
-<pre><code class="language-go">type Dispatcher struct {
-    // A pool of workers channels that are registered with the dispatcher
-    WorkerPool chan chan Job
-}
-
-func NewDispatcher(maxWorkers int) *Dispatcher {
-    pool := make(chan chan Job, maxWorkers)
-    return &amp;Dispatcher{WorkerPool: pool}
-}
-
-func (d *Dispatcher) Run() {
-    // starting n number of workers
-    for i := 0; i &lt; d.maxWorkers; i++ {
-        worker := NewWorker(d.pool)
-        worker.Start()
-    }
-
-    go d.dispatch()
-}
-
-func (d *Dispatcher) dispatch() {
-    for {
-        select {
-        case job := &lt;-JobQueue:
-            // a job request has been received
-            go func(job Job) {
-                // try to obtain a worker job channel that is available.
-                // this will block until a worker is idle
-                jobChannel := &lt;-d.WorkerPool
-
-                // dispatch the job to the worker job channel
-                jobChannel &lt;- job
-            }(job)
-        }
-    }
-}
-</code></pre>
-
-<p>注意到，我们提供了初始化并加入到池子的worker的最大数量。因为这个工程我们利用了Amazon Elasticbeanstalk带有的docker化的Go环境，所以我们常常会遵守<a href="https://12factor.net/">12-factor</a>方法论来配置我们的生成环境中的系统，我们从环境变了读取这些值。这种方式，我们控制worker的数量和JobQueue的大小，所以我们可以很快的改变这些值，而不需要重新部署集群。</p>
-
-<pre><code class="language-go">var (
-    MaxWorker = os.Getenv(&quot;MAX_WORKERS&quot;)
-    MaxQueue  = os.Getenv(&quot;MAX_QUEUE&quot;)
-)
-</code></pre>
-
-<h3 id="直接结果">直接结果</h3>
-
-<hr />
-
-<p>我们部署了之后，立马看到了延时降到微乎其微的数值，并未我们处理请求的能力提升很大。</p>
-
-<p><img src="https://raw.githubusercontent.com/kristd/kristd.github.io/master/20170629-01/1-2.png" alt="1-2" /></p>
-
-<p>Elastic Load Balancers完全启动后，我们看到ElasticBeanstalk 应用服务于每分钟1百万请求。通常情况下在上午时间有几个小时，流量峰值超过每分钟一百万次。</p>
-
-<p>我们一旦部署了新的代码，服务器的数量从100台大幅 下降到大约20台。</p>
-
-<p><img src="https://raw.githubusercontent.com/kristd/kristd.github.io/master/20170629-01/1-3.png" alt="1-3" /></p>
-
-<p>我们合理配置了我们的集群和自动均衡配置之后，我们可以把服务器的数量降至4x EC2 c4.Large实例，并且Elastic Auto-Scaling设置为如果CPU达到5分钟的90%利用率，我们就会产生新的实例。</p>
-
-<p><img src="https://raw.githubusercontent.com/kristd/kristd.github.io/master/20170629-01/1-4.png" alt="1-4" /></p>
-
-<h3 id="总结">总结</h3>
-
-<hr />
-
-<p>在我的书中，简单总是获胜。我们可以使用多队列、后台worker、复杂的部署设计一个复杂的系统，但是我们决定利用Elasticbeanstalk 的auto-scaling的能力和Go语言开箱即用的特性简化并发。</p>
-
-<p>我们仅仅用了4台机器，这并不是什么新鲜事了。可能它们还不如我的MacBook能力强大，但是却处理了每分钟1百万的写入到S3的请求。</p>
-
-<p>处理问题有正确的工具。当你的 Ruby on Rails 系统需要更强大的web handler时，可以考虑下ruby生态系统之外的技术，或许可以得到更简单但更强大的替代方案。</p>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://kristd.github.io/20170628-01/">
-        Golang使用断言的类型转换方法
-      </a>
-    </h1>
-
-    <span class="post-date">Wed, Jun 28, 2017</span>
-
-    
-
-<p><code>Golang</code></p>
-
-<h3 id="问题">问题</h3>
-
-<p>在对interface做类型转换时需要使用断言来转换成正确的类型</p>
-
-<h3 id="代码">代码</h3>
-
-<pre><code class="language-go">type R struct {
-	Config []map[string]interface{}
-}
-
-r := &amp;R{}
-
-//转换成字符串
-key1, ret := r.Config[0][&quot;key1&quot;].(string)
-if ret {
-    fmt.Println(&quot;success&quot;)
-}
-
-//转换成数组
-array1, ret := r.Config[0][&quot;array1&quot;].([]interface{})
-if ret {
-    fmt.Println(&quot;success&quot;)
-}
-</code></pre>
-
-  </div>
-  
-  <div class="post">
-    <h1 class="post-title">
-      <a href="https://kristd.github.io/20170627-01/">
-        Golang动态处理JSON数据结构
-      </a>
-    </h1>
-
-    <span class="post-date">Tue, Jun 27, 2017</span>
-
-    
-
-<h3 id="问题">问题</h3>
-
-<h3 id="解决办法">解决办法</h3>
-
-<h3 id="golang的反射机制">Golang的反射机制</h3>
-
-  </div>
-  
-</div>
-</div>
-
+    <footer>
+      
+<script async src="//yihui.name/js/center-img.js"></script>
+
+      
+      <hr/>
+      Open-Source | <a href="https://github.com/kristd">Github</a>
+      
+    </footer>
   </body>
 </html>
+

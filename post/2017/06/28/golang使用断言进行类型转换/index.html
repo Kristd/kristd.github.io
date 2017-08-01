@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>404 Page not found | TJ&#39;s Blog</title>
+    <title>Golang使用断言进行类型转换 | TJ&#39;s Blog</title>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/fonts.css" />
     <header>
@@ -49,8 +49,54 @@
   <body>
     <br/>
 
+<div class="article-meta">
+<h1><span class="title">Golang使用断言进行类型转换</span></h1>
 
-404 NOT FOUND
+<h2 class="date">2017/06/28</h2>
+<p class="terms">
+  
+  
+  Categories: <a href="/categories/dev">Dev</a> 
+  
+  
+  
+  Tags: <a href="/tags/golang">Golang</a> 
+  
+  
+</p>
+</div>
+
+
+
+<main>
+
+
+<p>在对interface做类型转换时需要使用断言来转换成正确的类型。</p>
+
+<h3 id="测试代码">测试代码</h3>
+
+<hr />
+
+<pre><code class="language-go">type R struct {
+	Config []map[string]interface{}
+}
+
+r := &amp;R{}
+
+//转换成字符串
+key1, ret := r.Config[0][&quot;key1&quot;].(string)
+if ret {
+    fmt.Println(&quot;success&quot;)
+}
+
+//转换成数组
+array1, ret := r.Config[0][&quot;array1&quot;].([]interface{})
+if ret {
+    fmt.Println(&quot;success&quot;)
+}
+</code></pre>
+
+</main>
 
     <footer>
       

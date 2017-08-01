@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on TJ Blog</title>
+    <title>Tags on TJ&#39;s Blog</title>
     <link>https://kristd.github.io/tags/</link>
-    <description>Recent content in Tags on TJ Blog</description>
+    <description>Recent content in Tags on TJ&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 19 Jul 2017 16:04:45 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 19 Jul 2017 22:29:05 +0800</lastBuildDate>
     
 	<atom:link href="https://kristd.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Golang</title>
       <link>https://kristd.github.io/tags/golang/</link>
-      <pubDate>Wed, 19 Jul 2017 16:04:45 +0800</pubDate>
+      <pubDate>Wed, 19 Jul 2017 22:29:05 +0800</pubDate>
       
       <guid>https://kristd.github.io/tags/golang/</guid>
       <description></description>
@@ -23,16 +23,16 @@
     <item>
       <title>Raft</title>
       <link>https://kristd.github.io/tags/raft/</link>
-      <pubDate>Wed, 26 Jul 2017 00:35:26 +0800</pubDate>
+      <pubDate>Wed, 26 Jul 2017 22:26:35 +0800</pubDate>
       
       <guid>https://kristd.github.io/tags/raft/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Websocket</title>
+      <title>WebSocket</title>
       <link>https://kristd.github.io/tags/websocket/</link>
-      <pubDate>Mon, 24 Jul 2017 09:39:01 +0800</pubDate>
+      <pubDate>Sun, 30 Jul 2017 15:05:29 +0800</pubDate>
       
       <guid>https://kristd.github.io/tags/websocket/</guid>
       <description></description>

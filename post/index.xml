@@ -1,15 +1,46 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Golang on TJ&#39;s Blog</title>
-    <link>https://kristd.github.io/tags/golang/</link>
-    <description>Recent content in Golang on TJ&#39;s Blog</description>
+    <title>Posts on TJ&#39;s Blog</title>
+    <link>https://kristd.github.io/post/</link>
+    <description>Recent content in Posts on TJ&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 19 Jul 2017 22:29:05 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 30 Jul 2017 15:05:29 +0800</lastBuildDate>
     
-	<atom:link href="https://kristd.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kristd.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>WebSocket协议简介</title>
+      <link>https://kristd.github.io/post/2017/07/30/websocket%E5%8D%8F%E8%AE%AE%E7%AE%80%E4%BB%8B/</link>
+      <pubDate>Sun, 30 Jul 2017 15:05:29 +0800</pubDate>
+      
+      <guid>https://kristd.github.io/post/2017/07/30/websocket%E5%8D%8F%E8%AE%AE%E7%AE%80%E4%BB%8B/</guid>
+      <description>原文链接
+WebSocket是HTML5下一种新的协议，与HTTP协议没有关系，但HTTP是不支持持久连接的。HTTP有1.1和1.0之说，差别在于是否支持keep-alive，把多个HTTP请求合并为一个，但是WebSocket其实是一个新协议，跟HTTP协议基本没有关系，只是为了兼容现有浏览器的握手规范而已，也就是说它是HTTP协议上的一种补充。
+WebSocket是一个持久化的基于HTTP的协议 HTTP的生命周期通过Request来界定，也就是一个Request 一个Response，那么在HTTP1.0中，这次HTTP请求就结束了。在HTTP1.1中进行了改进，使得有一个keep-alive，也就是说，在一个HTTP连接中，可以发送多个Request，接收多个Response。但是在HTTP中永远是一个request只能有一个response。而且这个response也是被动的，不能主动发起。
+WebSocket实现了浏览器与服务器全双工通信，能更好的节省服务器资源和带宽并达到实时通讯的目的。它与HTTP一样通过已建立的TCP连接来传输数据，但是它和HTTP最大不同是：
+  WebSocket是一种双向通信协议。在建立连接后，WebSocket服务器端和客户端都能主动向对方发送或接收数据，就像Socket一样； WebSocket需要像TCP一样，先建立连接，连接成功后才能相互通信。   传统HTTP客户端与服务器请求响应模式如下图所示：
+WebSocket模式客户端与服务器请求响应模式如下图：
+上图对比可以看出，相对于传统HTTP每次请求-应答都需要客户端与服务端建立连接的模式，WebSocket是类似Socket的TCP长连接通讯模式。一旦WebSocket连接建立后，后续数据都以帧序列的形式传输。在客户端断开WebSocket连接或Server端中断连接前，不需要客户端和服务端重新发起连接请求。在海量并发及客户端与服务器交互负载流量大的情况下，极大的节省了网络带宽资源的消耗，有明显的性能优势，且客户端发送和接受消息是在同一个持久连接上发起，实时性优势明显。
+相比HTTP长连接，WebSocket有以下特点：
+ 是真正的全双工方式，建立连接后客户端与服务器端是完全平等的，可以互相主动请求。而HTTP长连接基于HTTP，是传统的客户端对服务器发起请求的模式。HTTP长连接中，每次数据交换除了真正的数据部分外，服务器和客户端还要大量交换HTTP header，信息交换效率很低。WebSocket协议通过第一个request建立了TCP连接之后，之后交换的数据都不需要发送 HTTP header就能交换数据，这显然和原有的HTTP协议有区别所以它需要对服务器和客户端都进行升级才能实现。
+ 还有 multiplexing、不同的URL可以复用同一个WebSocket连接等功能。这些都是HTTP长连接不能做到的。
+  下面再通过客户端和服务端交互的报文对比WebSocket通讯与传统HTTP的不同点，一个典型的WebSocket握手：
+GET /chat HTTP/1.1 Host: server.example.com Upgrade: WebSocket Connection: Upgrade Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw== Sec-WebSocket-Protocol: chat, superchat Sec-WebSocket-Version: 13 Origin: http://example.com  可以看到，客户端发起的WebSocket连接报文类似传统HTTP报文，Sec-WebSocket-Key是WebSocket客户端发送的一个 base64编码的密文，要求服务端必须返回一个对应加密的Sec-WebSocket-Accept应答，否则客户端会抛出Error during WebSocket handshake错误，并关闭连接。
+Upgrade: WebSocket Connection: Upgrade  Upgrade：WebSocket参数值表明这是WebSocket类型请求,这个就是WebSocket的核心，告诉服务器发起的是WebSocket协议，不是HTTP协议。
+Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw== Sec-WebSocket-Protocol: chat, superchat Sec-WebSocket-Version: 13  Sec-WebSocket-Key是WebSocket客户端发送的一个 base64编码的密文，要求服务端必须返回一个对应加密的Sec-WebSocket-Accept应答，否则客户端会抛出Error during WebSocket handshake错误，并关闭连接，这个是浏览器随机生成的.</description>
+    </item>
+    
+    <item>
+      <title>分布式Raft协议</title>
+      <link>https://kristd.github.io/post/2017/07/26/%E5%88%86%E5%B8%83%E5%BC%8Fraft%E5%8D%8F%E8%AE%AE/</link>
+      <pubDate>Wed, 26 Jul 2017 22:26:35 +0800</pubDate>
+      
+      <guid>https://kristd.github.io/post/2017/07/26/%E5%88%86%E5%B8%83%E5%BC%8Fraft%E5%8D%8F%E8%AE%AE/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Golang异常捕捉方法recover和panic</title>

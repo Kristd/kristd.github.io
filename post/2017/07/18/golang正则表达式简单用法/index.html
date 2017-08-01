@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>404 Page not found | TJ&#39;s Blog</title>
+    <title>Golang正则表达式简单用法 | TJ&#39;s Blog</title>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/fonts.css" />
     <header>
@@ -49,8 +49,54 @@
   <body>
     <br/>
 
+<div class="article-meta">
+<h1><span class="title">Golang正则表达式简单用法</span></h1>
 
-404 NOT FOUND
+<h2 class="date">2017/07/18</h2>
+<p class="terms">
+  
+  
+  Categories: <a href="/categories/dev">Dev</a> 
+  
+  
+  
+  Tags: <a href="/tags/golang">Golang</a> 
+  
+  
+</p>
+</div>
+
+
+
+<main>
+
+
+<p>go的regexp包有两种类型函数，比如regexp.MustCompile(string)和regexp.Compile(string)，他们的差别在于Must类型的函数在正则表达式错误时会抛出panic，而非Must类型则会返回error类型。</p>
+
+<h3 id="函数原型对比">函数原型对比</h3>
+
+<hr />
+
+<pre><code class="language-go">func Compile(expr string) (*Regexp, error)
+
+func MustCompile(str string) *Regexp
+</code></pre>
+
+<h3 id="测试代码">测试代码</h3>
+
+<hr />
+
+<pre><code class="language-go">r := regexp.MustCompile(`&quot;(.+)&quot;`)
+
+//return slice
+strs := r.FindAllString(`Hel&quot;lo&quot; Wor&quot;ld&quot;`, -1)
+
+//return string
+str := r.FindString(`Hel&quot;lo&quot; Wor&quot;ld&quot;`)
+
+</code></pre>
+
+</main>
 
     <footer>
       
