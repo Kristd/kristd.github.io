@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Categories | TJ&#39;s Blog</title>
+    <title>golang的int转换为duration类型 | TJ&#39;s Blog</title>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/fonts.css" />
     <header>
@@ -23,7 +23,7 @@
       </li>
       
       
-      <li class="pull-left current">
+      <li class="pull-left ">
         <a href="/categories/">~/categories</a>
       </li>
       
@@ -49,19 +49,55 @@
   <body>
     <br/>
 
+<div class="article-meta">
+<h1><span class="title">golang的int转换为duration类型</span></h1>
 
-<h1>Categories</h1>
+<h2 class="date">2017/08/07</h2>
+<p class="terms">
+  
+  
+  Categories: <a href="/categories/dev">Dev</a> 
+  
+  
+  
+  Tags: <a href="/tags/golang">Golang</a> 
+  
+  
+</p>
+</div>
 
-<ul class="terms">
-  
-  <li>
-    <a href="/categories/Dev">
-      Dev
-    </a>
-    (9)
-  </li>
-  
-</ul>
+
+
+<main>
+
+
+<h4 id="问题">问题</h4>
+
+<hr />
+
+<p>在调用<code>time.sleep</code>的时候如果传入一个整形的变量会有如下报错：</p>
+
+<pre><code class="language-go">var t int
+time.Sleep(time.Second * t)  // error 
+
+&gt;&gt; invalid operation: time.Second * t (mismatched types time.Duration and int)`
+</code></pre>
+
+<h4 id="解决办法">解决办法</h4>
+
+<hr />
+
+<p>golang的time.Duration类型背后是int64</p>
+
+<pre><code class="language-go">type Duration int64`
+</code></pre>
+
+<p>我们需要对整形t做一个类型转换才能正确调用该函数</p>
+
+<pre><code class="language-go">time.Sleep(time.Second * time.Duration(t))  // success 
+</code></pre>
+
+</main>
 
     <footer>
       
