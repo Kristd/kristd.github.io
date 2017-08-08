@@ -3,7 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://kristd.github.io/post/2017/08/07/golang%E7%9A%84int%E8%BD%AC%E6%8D%A2%E4%B8%BAduration%E7%B1%BB%E5%9E%8B/</loc>
+    <loc>https://kristd.github.io/post/2017/08/08/%E4%BD%BF%E7%94%A8golang%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%E8%BF%9B%E8%A1%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%92%8C%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2017-08-08T14:43:19+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kristd.github.io/post/2017/08/07/golang%E7%9A%84int%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E4%B8%BAduration%E7%B1%BB%E5%9E%8B/</loc>
     <lastmod>2017-08-07T15:12:01+08:00</lastmod>
   </url>
   
@@ -54,24 +59,24 @@
   
   <url>
     <loc>https://kristd.github.io/categories/dev/</loc>
-    <lastmod>2017-08-07T15:12:01+08:00</lastmod>
+    <lastmod>2017-08-08T14:43:19+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kristd.github.io/tags/golang/</loc>
-    <lastmod>2017-08-07T15:12:01+08:00</lastmod>
+    <lastmod>2017-08-08T14:43:19+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kristd.github.io/</loc>
-    <lastmod>2017-08-07T15:12:01+08:00</lastmod>
+    <lastmod>2017-08-08T14:43:19+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://kristd.github.io/post/</loc>
-    <lastmod>2017-08-07T15:12:01+08:00</lastmod>
+    <lastmod>2017-08-08T14:43:19+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -83,7 +88,7 @@
   
   <url>
     <loc>https://kristd.github.io/tags/</loc>
-    <lastmod>2017-08-07T15:12:01+08:00</lastmod>
+    <lastmod>2017-08-08T14:43:19+08:00</lastmod>
     <priority>0</priority>
   </url>
   

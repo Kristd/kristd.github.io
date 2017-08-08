@@ -6,20 +6,29 @@
     <description>Recent content in Golang on TJ&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Aug 2017 15:12:01 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 08 Aug 2017 14:43:19 +0800</lastBuildDate>
     
 	<atom:link href="https://kristd.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>golang的int转换为duration类型</title>
-      <link>https://kristd.github.io/post/2017/08/07/golang%E7%9A%84int%E8%BD%AC%E6%8D%A2%E4%B8%BAduration%E7%B1%BB%E5%9E%8B/</link>
+      <title>使用Golang测试框架进行单元测试和压力测试</title>
+      <link>https://kristd.github.io/post/2017/08/08/%E4%BD%BF%E7%94%A8golang%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%E8%BF%9B%E8%A1%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%92%8C%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Tue, 08 Aug 2017 14:43:19 +0800</pubDate>
+      
+      <guid>https://kristd.github.io/post/2017/08/08/%E4%BD%BF%E7%94%A8golang%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6%E8%BF%9B%E8%A1%8C%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E5%92%8C%E5%8E%8B%E5%8A%9B%E6%B5%8B%E8%AF%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang的int类型转换为duration类型</title>
+      <link>https://kristd.github.io/post/2017/08/07/golang%E7%9A%84int%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E4%B8%BAduration%E7%B1%BB%E5%9E%8B/</link>
       <pubDate>Mon, 07 Aug 2017 15:12:01 +0800</pubDate>
       
-      <guid>https://kristd.github.io/post/2017/08/07/golang%E7%9A%84int%E8%BD%AC%E6%8D%A2%E4%B8%BAduration%E7%B1%BB%E5%9E%8B/</guid>
+      <guid>https://kristd.github.io/post/2017/08/07/golang%E7%9A%84int%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E4%B8%BAduration%E7%B1%BB%E5%9E%8B/</guid>
       <description> 问题 在调用time.sleep的时候如果传入一个整形的变量会有如下报错：
-var t int time.Sleep(time.Second * t) // error &amp;gt;&amp;gt; invalid operation: time.Second * t (mismatched types time.Duration and int)`  解决办法 golang的time.Duration类型背后是int64
-type Duration int64`  我们需要对整形t做一个类型转换才能正确调用该函数
+var t int time.Sleep(time.Second * t) // error &amp;gt;&amp;gt; invalid operation: time.Second * t (mismatched types time.Duration and int)  解决办法 golang的time.Duration类型背后是int64
+type Duration int64  我们需要对整形t做一个类型转换才能正确调用该函数
 time.Sleep(time.Second * time.Duration(t)) // success  </description>
     </item>
     
