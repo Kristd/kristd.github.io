@@ -1,24 +1,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>tags here on Hugo Themes</title>
+		<title>tags here on 8月</title>
 		<link>https://kristd.github.io/tags/tags-here/</link>
 		<description>Recent content in tags here </description>
 		<generator>Hugo -- gohugo.io</generator>
 		
   		<language>en</language>
 		
-		<managingEditor>Page(/tags/tags-here) (Hugo Author)</managingEditor>
+		<managingEditor>Page(/tags/tags-here) (TJ)</managingEditor>
     	
   		<lastBuildDate>Sat, 15 Feb 2020 20:00:00 +0900</lastBuildDate>
 		
 		<atom:link href="/tags/tags-here/" rel="self" type="application/rss+xml" />
 		
 		<item>
-			<title>Second</title>
+			<title>Redis BLPOP</title>
 			<link>https://kristd.github.io/post/second/</link>
 			<pubDate>Tue, 28 Jul 2020 03:49:15 +0000</pubDate>
 			<guid>https://kristd.github.io/post/second/</guid>
-			<description>标题2 content 456</description>
+			<description>Redis BLPOP BLPOP key [key …] timeout</description>
 		</item>
       	
 	</channel>

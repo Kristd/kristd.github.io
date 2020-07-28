@@ -1,17 +1,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>8月 on 8月</title>
-		<link>https://kristd.github.io/</link>
-		<description>Recent content in 8月 </description>
+		<title>redis on 8月</title>
+		<link>https://kristd.github.io/tags/redis/</link>
+		<description>Recent content in redis </description>
 		<generator>Hugo -- gohugo.io</generator>
 		
   		<language>en</language>
 		
-		<managingEditor>Page(&#34;8月&#34;) (TJ)</managingEditor>
+		<managingEditor>Page(/tags/redis) (TJ)</managingEditor>
     	
   		<lastBuildDate>Tue, 28 Jul 2020 03:49:15 +0000</lastBuildDate>
 		
-		<atom:link href="/" rel="self" type="application/rss+xml" />
+		<atom:link href="/tags/redis/" rel="self" type="application/rss+xml" />
 		
 		<item>
 			<title>Redis BLPOP</title>
