@@ -1,17 +1,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>Hugo Themes on Hugo Themes</title>
-		<link>https://kristd.github.io/</link>
-		<description>Recent content in Hugo Themes </description>
+		<title>tags here on Hugo Themes</title>
+		<link>https://kristd.github.io/tags/tags-here/</link>
+		<description>Recent content in tags here </description>
 		<generator>Hugo -- gohugo.io</generator>
 		
   		<language>en</language>
 		
-		<managingEditor>Page(&#34;Hugo Themes&#34;) (Hugo Author)</managingEditor>
+		<managingEditor>Page(/tags/tags-here) (Hugo Author)</managingEditor>
     	
-  		<lastBuildDate>Tue, 28 Jul 2020 03:49:15 +0000</lastBuildDate>
+  		<lastBuildDate>Sat, 15 Feb 2020 20:00:00 +0900</lastBuildDate>
 		
-		<atom:link href="/" rel="self" type="application/rss+xml" />
+		<atom:link href="/tags/tags-here/" rel="self" type="application/rss+xml" />
 		
 		<item>
 			<title>Second</title>
