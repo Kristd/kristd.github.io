@@ -2,11 +2,11 @@
     
         
             {
-                "ref": "https://kristd.github.io/post/second/",
-                "title": "Redis BLPOP",
+                "ref": "https://kristd.github.io/post/redis_sort/",
+                "title": "Redis SORT",
                 "section": "post",
                 "date" : "2020.07.28",
-                "body": "Redis BLPOP BLPOP key [key …] timeout\n"
+                "body": "Redis SORT SORT key [BY pattern] [LIMIT offset count] [GET pattern [GET pattern …]] [ASC | DESC] [ALPHA] [STORE destination]\n"
             }
         
     
