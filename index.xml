@@ -9,10 +9,18 @@
 		
 		<managingEditor>Page(&#34;8月&#34;) (TJ)</managingEditor>
     	
-  		<lastBuildDate>Tue, 28 Jul 2020 03:49:15 +0000</lastBuildDate>
+  		<lastBuildDate>Tue, 04 Aug 2020 13:59:07 +0800</lastBuildDate>
 		
 		<atom:link href="/" rel="self" type="application/rss+xml" />
 		
+		<item>
+			<title>Redis的RDB持久化</title>
+			<link>https://kristd.github.io/post/redis_rdb/</link>
+			<pubDate>Tue, 04 Aug 2020 13:59:07 +0800</pubDate>
+			<guid>https://kristd.github.io/post/redis_rdb/</guid>
+			<description></description>
+		</item>
+      	
 		<item>
 			<title>Redis SORT</title>
 			<link>https://kristd.github.io/post/redis_sort/</link>

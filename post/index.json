@@ -2,6 +2,16 @@
     
         
             {
+                "ref": "https://kristd.github.io/post/redis_rdb/",
+                "title": "Redis的RDB持久化",
+                "section": "post",
+                "date" : "2020.08.04",
+                "body": ""
+            }
+        
+    ,
+        
+            {
                 "ref": "https://kristd.github.io/post/redis_sort/",
                 "title": "Redis SORT",
                 "section": "post",
